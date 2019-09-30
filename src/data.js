@@ -1,12 +1,17 @@
 window.data = {
+
+
     //calculo de media para condicion de filtrar comunes y raros
     pokeMedia: (allPokeData) => {
         //convierte un array de objetos en un array numerico
         const avgSpawns = allPokeData.map(elementAvg => elementAvg.avg_spawns)
+            // console.log(avgSpawns);
             //Suma todos los elementos del arreglo numerico de map
         const acumAvgSpawns = avgSpawns.reduce((acum, elemt) => acum + elemt, 0)
+            //console.log(acumAvgSpawns);
             //Para saber el promedio o media se divide la sumatoria entre el tamaño del array
         let mediaPoke = acumAvgSpawns / avgSpawns.length;
+        //console.log(mediaPoke);
         return mediaPoke;
     },
 
